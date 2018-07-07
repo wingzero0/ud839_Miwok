@@ -15,8 +15,12 @@
  */
 package com.example.android.miwok;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,5 +30,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        TextView numbersTextview = (TextView)findViewById(R.id.numbers);
+        //final MainActivity that = this;
+        numbersTextview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("CLICKEVENT", "detect click number");
+                Intent intent = new Intent(MainActivity.this, NumberActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void onClickPhrase(View v){
+        Log.d("CLICKEVENT", "detect click but instant run, no completely restart");
+        Intent intent = new Intent(this, PhraseActivity.class);
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 }
