@@ -29,8 +29,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PhraseActivity" />
-        <activity android:name=".NumberActivity"></activity>
+        <activity android:name=".PhraseActivity"
+            android:label="Phrase"/>
+        <activity android:name=".NumberActivity"
+            android:label="Number"/>
     </application>
 
 </manifest>
