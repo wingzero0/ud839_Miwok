@@ -22,11 +22,15 @@ public class NumberActivity extends AppCompatActivity {
 //		rootLayout.addView(dynamicTextView);
 
 
-		ArrayList<String> words = new ArrayList<>();
+//		ArrayList<String> words = new ArrayList<>();
+		ArrayList<Word> words = new ArrayList<>();
 		for(int i = 0; i<1000; i++){
-			words.add(String.valueOf(i));
+//			words.add(String.valueOf(i));
+			words.add(new Word(String.valueOf(i), String.valueOf(i * (-1))));
 		}
-		ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
+//		ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, R.layout.list_item, words);
+
+		WordAdapter itemsAdapter = new WordAdapter(this, R.layout.list_item, words);
 
 		ListView listView = (ListView) findViewById(R.id.list);
 
